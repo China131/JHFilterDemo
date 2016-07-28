@@ -17,7 +17,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    
+    
+//    
+//    NSInteger j = -10000;
+//    for (NSInteger i = 0; i<1000000; i++) {
+//        
+//        j++;
+//        NSLog(@"%ld",j);
+//        NSLog(@"111%@",[NSDate date]);
+//    }
+//    
+//    
+//    NSLog(@"%@",[NSDate date]);
+//    
+//  
+    
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
