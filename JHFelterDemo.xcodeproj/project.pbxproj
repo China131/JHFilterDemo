@@ -28,7 +28,6 @@
 		E9372DFC1D460C270045045C /* img3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9372DF81D460C270045045C /* img3.jpg */; };
 		E9372DFD1D460C270045045C /* img4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9372DF91D460C270045045C /* img4.jpg */; };
 		E9372DFF1D4612C10045045C /* 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9372DFE1D4612C10045045C /* 001.jpg */; };
-		E9372E011D4612CE0045045C /* 927865CBF778475F79EFD5AB3615459E.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9372E001D4612CE0045045C /* 927865CBF778475F79EFD5AB3615459E.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +78,6 @@
 		E9372DF81D460C270045045C /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img3.jpg; sourceTree = "<group>"; };
 		E9372DF91D460C270045045C /* img4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img4.jpg; sourceTree = "<group>"; };
 		E9372DFE1D4612C10045045C /* 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 001.jpg; sourceTree = "<group>"; };
-		E9372E001D4612CE0045045C /* 927865CBF778475F79EFD5AB3615459E.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 927865CBF778475F79EFD5AB3615459E.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +135,6 @@
 				E9048AC81D4728AE00BFBAE7 /* img8.jpeg */,
 				E9048AC91D4728AE00BFBAE7 /* img9.jpg */,
 				E9048AC31D47243200BFBAE7 /* 5BXM4H6IZ134.jpg */,
-				E9372E001D4612CE0045045C /* 927865CBF778475F79EFD5AB3615459E.jpg */,
 				E9372DFE1D4612C10045045C /* 001.jpg */,
 				E9372DF61D460C270045045C /* img1.jpg */,
 				E9372DF71D460C270045045C /* img2.jpg */,
@@ -251,6 +248,7 @@
 				TargetAttributes = {
 					E9372DB91D4605F30045045C = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = HRJA43XU8W;
 					};
 					E9372DD21D4605F30045045C = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -292,7 +290,6 @@
 				E9048ACE1D4728AE00BFBAE7 /* img9.jpg in Resources */,
 				E9372DCD1D4605F30045045C /* LaunchScreen.storyboard in Resources */,
 				E9048AC41D47243200BFBAE7 /* 5BXM4H6IZ134.jpg in Resources */,
-				E9372E011D4612CE0045045C /* 927865CBF778475F79EFD5AB3615459E.jpg in Resources */,
 				E9372DFC1D460C270045045C /* img3.jpg in Resources */,
 				E9372DFB1D460C270045045C /* img2.jpg in Resources */,
 				E9372DFA1D460C270045045C /* img1.jpg in Resources */,
@@ -469,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HRJA43XU8W;
 				INFOPLIST_FILE = JHFelterDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jianhao.JHFelterDemo;
@@ -480,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HRJA43XU8W;
 				INFOPLIST_FILE = JHFelterDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jianhao.JHFelterDemo;

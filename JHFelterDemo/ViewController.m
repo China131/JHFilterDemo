@@ -10,7 +10,10 @@
 #import "JHFeilterManager.h"
 
 #define imagName  @"5BXM4H6IZ134.jpg"
-@interface ViewController ()
+
+
+
+@interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *row11;
 @property (weak, nonatomic) IBOutlet UITextField *row12;
@@ -51,11 +54,21 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *row45;
 @property (weak, nonatomic) IBOutlet UIImageView *currentImageView;
-
+@property (nonatomic,strong)UIImage * cacheImage;
 @property (nonatomic,strong)NSArray * itemsArr;
 @end
 
 @implementation ViewController
+
+
+- (IBAction)choosePictureClick:(UIButton *)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;;
+    [self presentViewController:picker animated:YES completion:nil];
+    
+    
+}
 
 - (void)viewDidLoad {
     
@@ -80,13 +93,23 @@
     }
     
     _currentImageView.image = [UIImage imageNamed:imagName];
-    
+    _cacheImage = _currentImageView.image ;
     _currentImageView.contentMode = UIViewContentModeScaleAspectFill;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showImage) name:UITextFieldTextDidChangeNotification object:nil];
 }
 
 
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+//    NSLog(@"%@",info);UIImagePickerControllerOriginalImage
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    _currentImageView.image = image;
+    _cacheImage = image;
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    
+}
 
 - (void)showImage{
     
@@ -108,7 +131,7 @@
     
     JHFeilterManager *manager = [JHFeilterManager new];
     
-    _currentImageView.image = [manager createImageWithImage:[UIImage imageNamed:imagName] andColorMatrix:p];
+    _currentImageView.image = [manager createImageWithImage:_cacheImage colorMatrix:p];
     
 }
 

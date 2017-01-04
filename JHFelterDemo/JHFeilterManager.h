@@ -19,9 +19,13 @@
 #import <Foundation/Foundation.h>
 
 typedef void(^imageBlock)(UIImage *image);
-@interface JHFeilterManager : UIView
+
+@interface JHFeilterManager : NSObject
+
 @property (nonatomic,copy)imageBlock imageBLOCK;
-- (UIImage *)createImageWithImage:(UIImage *)inImage andColorMatrix:(const float *)f;
+
+- (UIImage *)createImageWithImage:(UIImage *)inImage
+                      colorMatrix:(const float *)f;
 
 
 @end

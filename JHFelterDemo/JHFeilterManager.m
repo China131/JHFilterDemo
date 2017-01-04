@@ -112,7 +112,7 @@ static unsigned char *RequestImagePixelData(UIImage * inImage){
 
 
 //获得以像素为单位的长和宽，开始处理位图中每个像素的值，生成指定效果
-- (UIImage *)createImageWithImage:(UIImage *)inImage andColorMatrix:(const float *)f{
+- (UIImage *)createImageWithImage:(UIImage *)inImage colorMatrix:(const float *)f{
     
     
     /*        图片位图像素值数组         */
@@ -162,7 +162,6 @@ static unsigned char *RequestImagePixelData(UIImage * inImage){
         CGImageRef imageRef = CGImageCreate(w, h,bitsPerComponent, bitsPerPixel, bytesPerRow, colorSpaceRef, bitmapInfo, provider,NULL, NO, rederingIntent);
         if (!imageRef) {
             NSLog(@"创建输出图像失败");
-           
         }else{
             UIImage *my_image = [UIImage imageWithCGImage:imageRef];
             CFRelease(imageRef);
@@ -176,11 +175,8 @@ static unsigned char *RequestImagePixelData(UIImage * inImage){
             
             NSData *data = UIImageJPEGRepresentation(my_image, 1.0);
             
-
+            //在此释放位图空间
             free(bitmap);
-            
-            
-            
             return [UIImage imageWithData:data];
         }
         
@@ -197,46 +193,25 @@ static void changeRGB(int *red,int* green,int*blue,int*alpha ,const float *f){
     int greenV = *green;
     int blueV = *blue;
     int alphaV = *alpha;
-
-    
     *red = f[0] * redV + f[1]*greenV + f[2]*blueV + f[3] * alphaV + f[4];
     *green = f[5] * redV + f[6]*greenV + f[7]*blueV + f[8] * alphaV+ f[9];
     *blue = f[10] * redV + f[11]*greenV + f[12]*blueV + f[11] * alphaV+ f[14];
     *alpha = f[15] * redV + f[16]*greenV + f[17]*blueV + f[18] * alphaV+ f[19];
     
+    *red < 0 ? (*red = 0):(0);
+    *red > 255 ? (*red = 255):(0);
+    
+    *green < 0 ? (*green = 0):(0);
+    *green > 255 ? (*green = 255):(0);
+    
+    *blue < 0 ? (*blue = 0):(0);
+    *blue > 255 ? (*blue = 255):(0);
     
     
-    if (*red<0) {
-        *red=0;
-    }
+    *alpha < 0 ? (*alpha = 0):(0);
+    *alpha > 255 ? (*alpha = 255):(0);
     
-    if (*red>255) {
-        *red = 255;
-    }
-    
-    if (*green<0) {
-        *green = 0;
-    }
-    
-    if (*green>255) {
-        *green = 255;
-    }
-    if (*blue<0) {
-        *blue = 0;
-    }
-    
-    if (*blue>255) {
-        *blue = 255;
-    }
-    
-    
-    if (*alpha>255) {
-        *alpha=255;
-    }
-    if (*alpha<0) {
-        *alpha = 0;
-    }
-    
+
 }
 
 
