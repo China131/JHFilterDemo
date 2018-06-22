@@ -1,6 +1,6 @@
 # JHFilterDemo
 一个简单的滤镜生成器 可以调试滤镜效果  点击保存按钮即可打印当前的滤镜参数
-##前言
+## 前言
 女孩子都喜欢用美图工具进行图片美容，近来无事时，特意为某人写了个自定义图片滤镜生成器，安装到手机即可完成自定义滤镜渲染照片。app独一无二，虽简亦繁。
 
 
@@ -9,11 +9,11 @@
 魔镜：程序员不是木头人](http://upload-images.jianshu.io/upload_images/1687409-d62eac421b20e6a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-##核心技术
+## 核心技术
 图片滤镜核心技术的基本思路如下：
 ![核心技术流程](http://upload-images.jianshu.io/upload_images/1687409-65edc35f81af85df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-#具体流程
+# 具体流程
 ### 1、创建一个图像处理工具类
 
 ######  注:该类实例包括一个图像处理方法，该方法在传入原始图像和一个颜色矩阵后生成一个处理好的图像。
